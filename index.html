@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repertoar otvaranja — interaktivni vodič</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Repertoar otvaranja</div>
+    <h1>Otvaranja na ploči</h1>
+    <p class="subtitle">Četiri sustava — e4, d4, c4 i S (Sf3). Ruy Lopez, Torre napad, Londonski sistem, Aljehinova i indijske odbrane sad su grane unutar njih. Klikni sustav, pa prati poteze na ploči.</p>
+  </header>
+
+  <div class="system-picker" id="systemPicker"></div>
+
+  <div class="layout">
+    <div class="board-panel">
+      <div class="board-grid-wrap">
+        <div class="ranks" id="ranks"></div>
+        <div class="board" id="board"></div>
+        <div class="files" id="files"></div>
+      </div>
+      <div class="turn-indicator">
+        <span class="turn-pill" id="turnPill"><span class="turn-dot" id="turnDot"></span><span id="turnText">Bijeli na potezu</span></span>
+        <span id="plyText">Početni položaj</span>
+      </div>
+      <div class="controls-row">
+        <button class="ctrl-btn" id="backBtn">← Natrag</button>
+        <button class="ctrl-btn" id="resetBtn">↺ Ispočetka</button>
+      </div>
+      <div class="ledger">
+        <div class="ledger-label">Odigrani potezi</div>
+        <div class="ledger-moves" id="ledgerMoves"><span class="ledger-empty">Odaberi otvaranje iznad da započneš.</span></div>
+      </div>
+    </div>
+
+    <div class="side" id="side"></div>
+  </div>
+
+  <footer>Repertoar otvaranja — interaktivni vodič kroz sedam sustava</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
