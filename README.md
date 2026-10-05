@@ -15,6 +15,8 @@ The opening tree includes well-known openings and defenses such as the **Sicilia
 * Opening and variation names
 * Short educational descriptions
 * Back and reset navigation
+* Highlighted last move on the board
+* Keyboard shortcuts: `←` / `Backspace` to go back, `Esc` / `Home` to reset
 * Support for **1.e4, 1.d4 and 1.c4**
 * Responsive layout for different screen sizes
 

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Šahovska otvaranja — edukacijski program</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="shortcut icon" href="rook.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -422,7 +423,7 @@ const TREE = {
             { move:'d4', name:null, desc:null, children:[
               { move:'cxd4', name:null, desc:null, children:[
                 { move:'Sxd4', name:null, desc:null, children:[
-                  { move:'Sf6', name:'Ševeningenska varijanta', desc:'Fleksibilna pijunska struktura koja crnome kasnije omogućuje udare d5 ili b5.', children:[] }
+                  { move:'Sf6', name:'Sicilijanka s ...e6', desc:'Fleksibilna pijunska struktura; nakon ...d6 prelazi u Ševeningensku varijantu, a uz ...Sc6 ili ...a6 u Taimanovljevu odnosno Kan varijantu.', children:[] }
                 ]}
               ]}
             ]}
@@ -438,11 +439,11 @@ const TREE = {
               { move:'Sf6', name:'Klasična varijanta', desc:'Prirodan razvoj obiju strana bez ranih obveza u pijunskoj strukturi centra.', children:[] }
             ]},
             { move:'Sd2', name:'Tarrascheva varijanta', desc:'Bijeli izbjegava vezanje skakača i gradi fleksibilniju strukturu za srednju igru.', children:[
-              { move:'Sf6', name:null, desc:null, children:[] },
-              { move:'c5', name:null, desc:null, children:[] }
+              { move:'Sf6', name:null, desc:'Crni razvija skakača i napada e4, bez ranog vezanja bijelog skakača.', children:[] },
+              { move:'c5', name:null, desc:'Crni odmah napada bijeli centar pijunom c5, kao u većini francuskih struktura.', children:[] }
             ]},
             { move:'e5', name:'Napredna varijanta', desc:'Bijeli zauzima prostor u centru zatvaranjem lanca pijuna; crni odmah napada njegovu bazu.', children:[
-              { move:'c5', name:null, desc:null, children:[] }
+              { move:'c5', name:null, desc:'Standardan udar protiv baze pijunskog lanca (d4) kojim crni traži protuigru.', children:[] }
             ]},
             { move:'exd5', name:null, desc:null, children:[
               { move:'exd5', name:'Izmijenjena varijanta', desc:'Simetrična, mirnija struktura s otvorenim linijama za razvoj oba lovca.', children:[] }
@@ -453,8 +454,8 @@ const TREE = {
       { move:'c6', name:'Caro-Kann obrana', desc:'Slično Francuskoj obrani, ali crni čuva mogućnost da razvije lovca c8 prije nego odigra e6.', children:[
         { move:'d4', name:null, desc:null, children:[
           { move:'d5', name:null, desc:null, children:[
-            { move:'e5', name:'Napredna varijanta', desc:'Bijeli dobiva prostor u centru; crni odmah napada bazu pijunskog lanca potezom c5.', children:[
-              { move:'Lf5', name:null, desc:null, children:[] }
+            { move:'e5', name:'Napredna varijanta', desc:'Bijeli dobiva prostor u centru; crni odmah razvija lovca c8 izvan pijunskog lanca potezom Lf5.', children:[
+              { move:'Lf5', name:null, desc:'Lovac izlazi izvan pijunskog lanca prije nego crni odigra e6.', children:[] }
             ]},
             { move:'exd5', name:null, desc:null, children:[
               { move:'cxd5', name:'Izmijenjena varijanta', desc:'Simetrična struktura koja obično vodi u miran, strateški razvoj obiju strana.', children:[] }
@@ -467,7 +468,7 @@ const TREE = {
               ]}
             ]},
             { move:'Sd2', name:'Moderna (napredna) varijanta', desc:'Fleksibilniji raspored figura za bijelog uz vrlo sličnu pijunsku strukturu.', children:[
-              { move:'dxe4', name:null, desc:null, children:[] }
+              { move:'dxe4', name:null, desc:'Crni otvara centar zamjenom na e4 i smanjuje bijeli pritisak.', children:[] }
             ]}
           ]}
         ]}
@@ -488,7 +489,7 @@ const TREE = {
           ]},
           { move:'dxc4', name:'Damin gambit prihvaćen', desc:'Crni privremeno uzima pijuna c4; bijeli ga obično vraća uz brži razvoj i bolji centar.', children:[
             { move:'Sf3', name:null, desc:null, children:[
-              { move:'Sf6', name:null, desc:null, children:[] }
+              { move:'Sf6', name:null, desc:'Crni razvija skakača i napada centar, a pijuna c4 zasad zadržava.', children:[] }
             ]}
           ]},
           { move:'c6', name:'Slavenska obrana', desc:'Crni brani pijuna d5 potezom c6, čuvajući put za razvoj lovca c8 izvan pijunskog lanca.', children:[
@@ -525,7 +526,7 @@ const TREE = {
           ]},
           { move:'c5', name:'Benonijeva obrana', desc:'Crni odmah traži neravnotežu u pijunskoj strukturi umjesto mirne simetrije.', children:[
             { move:'d5', name:'Moderna Benoni', desc:'Bijeli zauzima prostor u centru; crni gradi igru na dugoj dijagonali a8–h1.', children:[
-              { move:'e6', name:null, desc:null, children:[] }
+              { move:'e6', name:null, desc:'Crni otvara liniju d i priprema pritisak na pijuna d5.', children:[] }
             ]}
           ]}
         ]}
@@ -534,7 +535,7 @@ const TREE = {
     { move:'c4', name:'Englesko otvaranje', desc:'Fleksibilno otvaranje s krila koje često prelazi u pozicije slične sicilijanskoj ili damine obrane, samo s obrnutim bojama.', children:[
       { move:'e5', name:'Obrnuta sicilijanka', desc:'Pozicija sicilijanske obrane s obrnutim bojama — bijeli ima tempo viška naspram uobičajene sicilijanke.', children:[
         { move:'Sc3', name:null, desc:null, children:[
-          { move:'Sf6', name:null, desc:null, children:[] }
+          { move:'Sf6', name:null, desc:'Crni razvija skakača i drži kontrolu nad poljima e4 i d5.', children:[] }
         ]}
       ]},
       { move:'Sf6', name:null, desc:null, children:[
@@ -545,7 +546,7 @@ const TREE = {
       ]},
       { move:'c5', name:'Simetrična engleska', desc:'Obje strane igraju istu pijunsku strukturu, boreći se za male, dugoročne prednosti.', children:[
         { move:'Sf3', name:null, desc:null, children:[
-          { move:'Sf6', name:null, desc:null, children:[] }
+          { move:'Sf6', name:null, desc:'Crni razvija skakača i pritišće centar, zadržavajući simetričnu strukturu.', children:[] }
         ]}
       ]},
       { move:'c6', name:'Prelazak u slavensku obranu', desc:'Ova postavka često izravno prelazi u slavensku obranu nakon što bijeli odigra d4.', children:[
@@ -589,58 +590,74 @@ function canReach(pieceType, from, to, board){
     default: return false;
   }
 }
-function applyMove(board, san, color){
+// Vraća {board, from, to}; from/to služe za isticanje zadnjeg poteza.
+// Podržava rokadu, promociju pijuna i en passant.
+function applyMoveEx(board, san, color){
   const nb = Object.assign({}, board);
-  let clean = san.replace(/[+#!?]/g,'');
-  let pieceType='P', rest=clean;
-  if('SLTDK'.includes(clean[0])){ pieceType = clean[0]; rest = clean.slice(1); }
+  const clean = san.replace(/[+#!?]/g,'');
+
+  if(clean.startsWith('O-O')){
+    const rank = color==='w' ? '1' : '8';
+    const long = clean.startsWith('O-O-O');
+    const kFrom = 'e'+rank, kTo = (long?'c':'g')+rank;
+    const rFrom = (long?'a':'h')+rank, rTo = (long?'d':'f')+rank;
+    delete nb[kFrom]; delete nb[rFrom];
+    nb[kTo] = color+'K'; nb[rTo] = color+'T';
+    return {board:nb, from:kFrom, to:kTo};
+  }
+
+  let rest = clean, promo = null;
+  const pm = rest.match(/=([SLTD])$/);
+  if(pm){ promo = pm[1]; rest = rest.slice(0, pm.index); }
+  let pieceType = 'P';
+  if('SLTDK'.includes(rest[0])){ pieceType = rest[0]; rest = rest.slice(1); }
   const capture = rest.includes('x');
   const restNoX = rest.replace('x','');
   const dest = restNoX.slice(-2);
   const disambig = restNoX.slice(0, restNoX.length-2);
-  const [df,dr] = sqCoord(dest);
+  const [, dr] = sqCoord(dest);
+  let from = null;
 
   if(pieceType==='P'){
+    const stepDir = color==='w' ? 1 : -1;
     if(capture){
-      const srcFile = disambig;
-      const srcRank = color==='w' ? dr-1 : dr+1;
-      const srcSq = srcFile + (srcRank+1);
-      delete nb[srcSq];
-      nb[dest] = color+'P';
+      from = disambig + (dr - stepDir + 1);
+      // en passant: odredišno polje je prazno, uzeti pijun stoji na polju iza njega
+      if(!board[dest]) delete nb[dest[0] + (dr - stepDir + 1)];
     } else {
       const destFile = dest[0];
-      let chosen=null;
       for(const sq in board){
         if(board[sq]===color+'P' && sq[0]===destFile){
-          const [sf,sr] = sqCoord(sq);
-          const stepDir = color==='w' ? 1 : -1;
+          const [, sr] = sqCoord(sq);
           const distance = (dr - sr) * stepDir;
-          if(distance===1){ chosen=sq; break; }
+          if(distance===1){ from=sq; break; }
           if(distance===2 && ((color==='w'&&sr===1)||(color==='b'&&sr===6))){
             const midSq = destFile + (sr+stepDir+1);
-            if(!board[midSq]){ chosen=sq; break; }
+            if(!board[midSq]){ from=sq; break; }
           }
         }
       }
-      if(chosen){ delete nb[chosen]; nb[dest] = color+'P'; }
     }
-    return nb;
-  } else {
-    const candidates = [];
-    for(const sq in board){
-      if(board[sq]===color+pieceType && canReach(pieceType, sq, dest, board)){
-        candidates.push(sq);
-      }
-    }
-    let chosen = candidates[0];
-    if(candidates.length>1 && disambig){
-      const filtered = candidates.filter(sq => sq.includes(disambig));
-      if(filtered.length) chosen = filtered[0];
-    }
-    if(chosen){ delete nb[chosen]; nb[dest] = color+pieceType; }
-    return nb;
+    if(from) delete nb[from];
+    nb[dest] = color + (promo || 'P');
+    return {board:nb, from, to:dest};
   }
+
+  const candidates = [];
+  for(const sq in board){
+    if(board[sq]===color+pieceType && canReach(pieceType, sq, dest, board)){
+      candidates.push(sq);
+    }
+  }
+  let chosen = candidates[0];
+  if(candidates.length>1 && disambig){
+    const filtered = candidates.filter(sq => sq.includes(disambig));
+    if(filtered.length) chosen = filtered[0];
+  }
+  if(chosen){ delete nb[chosen]; nb[dest] = color+pieceType; }
+  return {board:nb, from:chosen||null, to:dest};
 }
+function applyMove(board, san, color){ return applyMoveEx(board, san, color).board; }
 
 /* ============ IKONE FIGURA ============ */
 const PIECE_ICON = {
@@ -649,11 +666,13 @@ const PIECE_ICON = {
 };
 function moveIcon(san, color){
   let type='P';
-  if('SLTDK'.includes(san[0])) type = san[0];
+  if(san.startsWith('O-O')) type = 'K';
+  else if('SLTDK'.includes(san[0])) type = san[0];
   return PIECE_ICON[color+type];
 }
 function formatSAN(san){
   // vizualni prikaz: makni slovo figure (ikonica ga zamjenjuje), zadrži x i odredište
+  if(san.startsWith('O-O')) return san;
   if('SLTDK'.includes(san[0])) return san.slice(1);
   return san;
 }
@@ -662,20 +681,18 @@ function formatSAN(san){
 let path = []; // niz odabranih čvorova od korijena
 
 function currentNode(){
-  let node = TREE;
-  for(const n of path) node = n;
   return path.length ? path[path.length-1] : TREE;
 }
-function boardAtPath(){
+function positionAtPath(){
   let board = Object.assign({}, START_BOARD);
   let color = 'w';
-  let lastFrom=null, lastTo=null;
+  let from = null, to = null;
   for(const node of path){
-    const beforeSquares = Object.keys(board).filter(s=>board[s] && board[s][0]===color);
-    board = applyMove(board, node.move, color);
+    const r = applyMoveEx(board, node.move, color);
+    board = r.board; from = r.from; to = r.to;
     color = color==='w' ? 'b' : 'w';
   }
-  return board;
+  return {board, from, to};
 }
 function colorToMoveAtDepth(depth){
   return depth % 2 === 0 ? 'w' : 'b';
@@ -690,7 +707,7 @@ FILES.forEach(f=>{ const s=document.createElement('span'); s.textContent=f; file
 for(let r=8;r>=1;r--){ const s=document.createElement('span'); s.textContent=r; ranksEl.appendChild(s); }
 
 function renderBoard(){
-  const board = boardAtPath();
+  const {board, from, to} = positionAtPath();
   boardEl.innerHTML='';
   for(let r=8;r>=1;r--){
     for(let f=0;f<8;f++){
@@ -698,7 +715,7 @@ function renderBoard(){
       const sq = file+r;
       const div = document.createElement('div');
       const isLight = (f+r)%2===1;
-      div.className = 'sq ' + (isLight?'light':'dark');
+      div.className = 'sq ' + (isLight?'light':'dark') + (sq===from?' moved-from':'') + (sq===to?' moved-to':'');
       const piece = board[sq];
       if(piece){
         const span = document.createElement('span');
@@ -725,7 +742,7 @@ function renderLedger(){
       const moveNum = Math.floor(i/2)+1;
       html += '<span class="movenum">'+moveNum+'.</span> ';
     }
-    html += formatSAN(path[i].move) + ' ';
+    html += esc(formatSAN(path[i].move)) + ' ';
   }
   el.innerHTML = html;
 }
@@ -741,8 +758,12 @@ function renderTurn(){
 }
 
 /* ============ RENDER: DESNI PANEL ============ */
+function esc(str){
+  return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
 function collectNamedTrail(){
-  return path.filter(n=>n.name).map(n=>n.name);
+  // uzastopni isti nazivi (npr. dvije "Klasične varijante") prikazuju se samo jednom
+  return path.filter(n=>n.name).map(n=>n.name).filter((n,i,a)=>i===0 || n!==a[i-1]);
 }
 
 function renderSide(){
@@ -777,7 +798,7 @@ function renderSide(){
   if(node.name && depth>0){
     const card=document.createElement('div');
     card.className='named-card';
-    card.innerHTML = '<div class="kicker">Prepoznato otvaranje</div><h3>'+node.name+'</h3>' + (node.desc?('<p>'+node.desc+'</p>'):'');
+    card.innerHTML = '<div class="kicker">Prepoznato otvaranje</div><h3>'+esc(node.name)+'</h3>' + (node.desc?('<p>'+esc(node.desc)+'</p>'):'');
     side.appendChild(card);
   }
 
@@ -799,9 +820,9 @@ function renderSide(){
       const moveNum = Math.floor(depth/2)+1;
       const prefix = colorToMove==='w' ? (moveNum+'.') : (moveNum+'...');
       let inner = '<div class="choice-top"><span class="choice-icon '+(colorToMove==='w'?'pw':'pb')+'">'+icon+'</span>' +
-                  '<span class="choice-san">'+prefix+' '+formatSAN(child.move)+'</span></div>';
-      if(child.name){ inner += '<span class="choice-name">'+child.name+'</span>'; }
-      if(child.desc){ inner += '<span class="choice-desc">'+child.desc+'</span>'; }
+                  '<span class="choice-san">'+prefix+' '+esc(formatSAN(child.move))+'</span></div>';
+      if(child.name){ inner += '<span class="choice-name">'+esc(child.name)+'</span>'; }
+      if(child.desc){ inner += '<span class="choice-desc">'+esc(child.desc)+'</span>'; }
       btn.innerHTML = inner;
       btn.addEventListener('click', ()=>{
         path.push(child);
@@ -813,7 +834,7 @@ function renderSide(){
   } else if(depth>0){
     const note=document.createElement('div');
     note.className='end-note';
-    note.textContent = 'Došao/la si do kraja ove linije unutar edukacijskog opsega (do 3.–4. poteza). Klikni „Natrag” da isprobaš drugu granu, ili „Ispočetka” za novi izbor otvaranja.';
+    note.textContent = 'Došao/la si do kraja ove linije unutar edukacijskog opsega (do 3.–4. poteza). Klikni „Natrag” (ili tipku ←) da isprobaš drugu granu, ili „Ispočetka” (Esc) za novi izbor otvaranja.';
     side.appendChild(note);
   }
 }
@@ -831,6 +852,16 @@ document.getElementById('backBtn').addEventListener('click', ()=>{
 });
 document.getElementById('resetBtn').addEventListener('click', ()=>{
   path = []; renderAll();
+});
+
+// Tipkovnica: ← ili Backspace = natrag, Esc ili Home = ispočetka
+document.addEventListener('keydown', e=>{
+  if(e.altKey || e.ctrlKey || e.metaKey) return;
+  if(e.key==='ArrowLeft' || e.key==='Backspace'){
+    if(path.length){ e.preventDefault(); path.pop(); renderAll(); }
+  } else if(e.key==='Escape' || e.key==='Home'){
+    if(path.length){ e.preventDefault(); path = []; renderAll(); }
+  }
 });
 
 renderAll();
